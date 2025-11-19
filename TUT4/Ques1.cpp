@@ -10,42 +10,34 @@ public:
         rear = -1;
     }
 
-    // Check if the queue is full
     bool isFull() {
         return rear == MAX - 1;
     }
-
-    // Check if the queue is empty
     bool isEmpty() {
         return front == -1 || front > rear;
     }
-
-    // Add an element to the queue
     void enqueue(int val) {
         if (isFull()) {
             cout << "Queue Overflow" << endl;
             return;
         }
-        if (front == -1 ) front = 0; // Initialize front on first enqueue
-        arr[++rear] = val; // Increment rear and add the new element
+        if (front == -1 ) front = 0; 
+        arr[++rear] = val; 
     }
 
-    // Remove an element from the queue
+ 
     int dequeue() {
         if (isEmpty()) {
             cout << "Queue Underflow" << endl;
-            return -1; // Return -1 to indicate underflow
+            return -1; 
         }
-        return arr[front++]; // Return the front element and increment front
-    }
-
-    // Get the front element of the queue
+        return arr[front++]; }
     int peek() {
         if (isEmpty()) {
             cout << "Queue is empty" << endl;
-            return -1; // Return -1 to indicate empty queue
+            return -1;
         }
-        return arr[front]; // Return the front element without removing it
+        return arr[front];
     }
 };
 int main() {
@@ -55,10 +47,10 @@ int main() {
     q.enqueue(20);
     q.enqueue(30);
 
-    cout << "Front element is: " << q.peek() << endl; // Should print 10
+    cout << "Front element is: " << q.peek() << endl; 
 
-    cout << "Dequeued: " << q.dequeue() << endl; // Should print 10
-    cout << "Front element is: " << q.peek() << endl; // Should print 20
+    cout << "Dequeued: " << q.dequeue() << endl; 
+    cout << "Front element is: " << q.peek() << endl; 
 
     return 0;
 }

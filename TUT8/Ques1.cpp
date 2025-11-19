@@ -7,7 +7,6 @@ struct Node {
     Node* right;
 };
 
-// Create new node
 Node* createNode(int data) {
     Node* newNode = new Node();
     newNode->data = data;
@@ -15,7 +14,6 @@ Node* createNode(int data) {
     return newNode;
 }
 
-// Recursive Traversals
 void preorder(Node* root) {
     if (root == NULL) return;
     cout << root->data << " ";
@@ -38,7 +36,6 @@ void postorder(Node* root) {
 }
 
 int main() {
-    // Creating sample tree
     Node* root = createNode(1);
     root->left = createNode(2);
     root->right = createNode(3);

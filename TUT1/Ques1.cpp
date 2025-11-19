@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-#define MAX 100   // Maximum size of the array
-int arr[MAX];    // Array declaration
-int n = 0;       // Current number of elements in the array
+#define MAX 100  
+int arr[MAX];    
+int n = 0;       
 void createArray() {
     cout << "Enter number of elements: ";
     cin >> n;
@@ -17,7 +17,6 @@ void createArray() {
     }
     cout << "Array created successfully!\n";
 }
-// Function to display array
 void displayArray() {
     if (n == 0) {
         cout << "Array is empty!\n";
@@ -29,7 +28,6 @@ void displayArray() {
     }
     cout << endl;
 }
-// Function to insert element
 void insertElement() {
     if (n == MAX) {
         cout << "Array is full! Cannot insert.\n";
@@ -47,7 +45,6 @@ void insertElement() {
         return;
     }
 
-    // Shift elements to right
     for (int i = n; i >= pos; i--) {
         arr[i] = arr[i - 1];
     }
@@ -57,8 +54,6 @@ void insertElement() {
 
     cout << "Element inserted successfully!\n";
 }
-
-// Function to delete element
 void deleteElement() {
     if (n == 0) {
         cout << "Array is empty! Cannot delete.\n";
@@ -73,8 +68,6 @@ void deleteElement() {
         cout << "Invalid position!\n";
         return;
     }
-
-    // Shift elements to left
     for (int i = pos - 1; i < n - 1; i++) {
         arr[i] = arr[i + 1];
     }
@@ -82,8 +75,6 @@ void deleteElement() {
     n--;
     cout << "Element deleted successfully!\n";
 }
-
-// Function for Linear Search
 void linearSearch() {
     if (n == 0) {
         cout << "Array is empty!\n";

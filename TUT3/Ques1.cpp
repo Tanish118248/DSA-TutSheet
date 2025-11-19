@@ -5,7 +5,7 @@ class stack{
     int arr[1000];
     int top;
 public:
-    stack(){ top = -1; } // constructor initializes empty Stack
+    stack(){ top = -1; } 
 
     void push(int x){
         if(top == 999){
@@ -21,7 +21,7 @@ public:
             cout << "Stack Underflow\n";
             return;
         }
-        top--;  // just move the pointer down
+        top--; 
         cout << "popped from stack\n";
     }
 
@@ -39,7 +39,6 @@ public:
     bool isFull() {
         return top == 1000 - 1;
     }
-    // (v) Display stack elements
     void display() {
         if (empty()) {
             cout << "Stack is empty." << endl;

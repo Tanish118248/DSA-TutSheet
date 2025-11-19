@@ -29,7 +29,6 @@ Node* findMin(Node* root) {
     return root;
 }
 
-// Delete node
 Node* deleteNode(Node* root, int key) {
     if (!root) return root;
 
@@ -38,7 +37,6 @@ Node* deleteNode(Node* root, int key) {
     else if (key > root->data)
         root->right = deleteNode(root->right, key);
     else {
-        // Node with one or no child
         if (!root->left) {
             Node* temp = root->right;
             delete root;
@@ -50,7 +48,6 @@ Node* deleteNode(Node* root, int key) {
             return temp;
         }
 
-        // Node with two children
         Node* temp = findMin(root->right);
         root->data = temp->data;
         root->right = deleteNode(root->right, temp->data);
@@ -58,13 +55,11 @@ Node* deleteNode(Node* root, int key) {
     return root;
 }
 
-// Maximum depth
 int maxDepth(Node* root) {
     if (!root) return 0;
     return 1 + max(maxDepth(root->left), maxDepth(root->right));
 }
 
-// Minimum depth
 int minDepth(Node* root) {
     if (!root) return 0;
     if (!root->left) return 1 + minDepth(root->right);

@@ -1,20 +1,20 @@
-// // //a. Linear Search
-// #include <bits/stdc++.h>
-// using namespace std;
-// int findMissingLinear(int arr[], int n) {
-//     for(int i = 0; i < n-1; i++) {
-//         if(arr[i] != i+1)
-//             return i+1; // missing number
-//     }
-//     return n; // if last number is missing
-// }
-// int main(){
-//     int arr[] = {1,2,4,5};
-//     int n = sizeof(arr)/sizeof(arr[0]);
+// //a. Linear Search
+#include <bits/stdc++.h>
+using namespace std;
+int findMissingLinear(int arr[], int n) {
+    for(int i = 0; i < n-1; i++) {
+        if(arr[i] != i+1)
+            return i+1; 
+    }
+    return n; 
+}
+int main(){
+    int arr[] = {1,2,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
 
-//     cout<<"The missing element is : " << findMissingLinear(arr,n)<<endl;
-//     return 0;
-// }
+    cout<<"The missing element is : " << findMissingLinear(arr,n)<<endl;
+    return 0;
+}
 
 // b. Binary Search
 #include <iostream>

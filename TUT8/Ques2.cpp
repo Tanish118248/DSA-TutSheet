@@ -7,7 +7,6 @@ struct Node {
     Node* right;
 };
 
-// Function to create a new node
 Node* createNode(int data) {
     Node* newNode = new Node();
     newNode->data = data;
@@ -15,7 +14,6 @@ Node* createNode(int data) {
     return newNode;
 }
 
-// Insert node into BST
 Node* insert(Node* root, int key) {
     if (root == NULL)
         return createNode(key);
@@ -26,14 +24,12 @@ Node* insert(Node* root, int key) {
     return root;
 }
 
-// (a) Search Recursive
 bool searchRecursive(Node* root, int key) {
     if (!root) return false;
     if (root->data == key) return true;
     return key < root->data ? searchRecursive(root->left, key) : searchRecursive(root->right, key);
 }
 
-// (a) Search Non-Recursive
 bool searchIterative(Node* root, int key) {
     while (root) {
         if (root->data == key) return true;
@@ -42,21 +38,18 @@ bool searchIterative(Node* root, int key) {
     return false;
 }
 
-// (b) Find Minimum
 Node* findMin(Node* root) {
     while (root && root->left)
         root = root->left;
     return root;
 }
 
-// (c) Find Maximum
 Node* findMax(Node* root) {
     while (root && root->right)
         root = root->right;
     return root;
 }
 
-// (d) Inorder Successor
 Node* inorderSuccessor(Node* root, Node* node) {
     if (node->right)
         return findMin(node->right);
@@ -73,7 +66,6 @@ Node* inorderSuccessor(Node* root, Node* node) {
     return successor;
 }
 
-// (e) Inorder Predecessor
 Node* inorderPredecessor(Node* root, Node* node) {
     if (node->left)
         return findMax(node->left);
@@ -90,7 +82,6 @@ Node* inorderPredecessor(Node* root, Node* node) {
     return predecessor;
 }
 
-// Inorder display
 void inorder(Node* root) {
     if (!root) return;
     inorder(root->left);
@@ -118,7 +109,7 @@ int main() {
     cout << "Minimum: " << findMin(root)->data << endl;
     cout << "Maximum: " << findMax(root)->data << endl;
 
-    Node* node = root->left->right; // 40
+    Node* node = root->left->right; 
     cout << "Inorder Successor of " << node->data << ": " << inorderSuccessor(root, node)->data << endl;
     cout << "Inorder Predecessor of " << node->data << ": " << inorderPredecessor(root, node)->data << endl;
 }

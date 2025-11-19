@@ -2,58 +2,53 @@
 using namespace std;
 
 class CircularQueue {
-    int arr[6];    // fixed size (example N = 6)
+    int arr[6];    
     int front, rear, size;
 
 public:
     CircularQueue() {
         front = rear = -1;
-        size = 6;   // capacity
+        size = 6;  
     }
 
-    // Check if queue is full
     bool isFull() {
         return (front == 0 && rear == size - 1) || (front == rear + 1);
     }
 
-    // Check if queue is empty
     bool isEmpty() {
         return (front == -1);
     }
 
-    // Insert element
     void enqueue(int x) {
         if (isFull()) {
             cout << "Queue Overflow\n";
             return;
         }
-        if (front == -1) { // first element
+        if (front == -1) {
             front = rear = 0;
         } else if (rear == size - 1 && front != 0) {
-            rear = 0; // wrap around
+            rear = 0; 
         } else {
             rear++;
         }
         arr[rear] = x;
     }
 
-    // Delete element
     void dequeue() {
         if (isEmpty()) {
             cout << "Queue Underflow\n";
             return;
         }
         cout << "Deleted: " << arr[front] << endl;
-        if (front == rear) { // only one element
+        if (front == rear) {
             front = rear = -1;
         } else if (front == size - 1) {
-            front = 0; // wrap around
+            front = 0; 
         } else {
             front++;
         }
     }
 
-    // Get front element
     int getFront() {
         if (isEmpty()) {
             cout << "Queue is Empty\n";
@@ -62,7 +57,6 @@ public:
         return arr[front];
     }
 
-    // Display queue
     void display() {
         if (isEmpty()) {
             cout << "Queue is Empty\n";
@@ -90,7 +84,7 @@ int main() {
     q.enqueue(30);
     q.enqueue(40);
     q.enqueue(50);
-    q.enqueue(60);  // should overflow
+    q.enqueue(60); 
 
     q.display();
 

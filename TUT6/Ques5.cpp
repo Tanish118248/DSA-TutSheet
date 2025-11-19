@@ -19,7 +19,7 @@ int main() {
     Node* n2 = new Node{4, NULL};
     Node* n3 = new Node{6, NULL};
     Node* n4 = new Node{7, NULL};
-    n1->next = n2; n2->next = n3; n3->next = n4; n4->next = n1; // circular
+    n1->next = n2; n2->next = n3; n3->next = n4; n4->next = n1; 
     cout << (isCircular(n1) ? "True" : "False") << endl;
     return 0;
 }

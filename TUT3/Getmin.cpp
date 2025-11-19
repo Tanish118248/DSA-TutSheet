@@ -11,14 +11,11 @@ public:
     SpecialStack() {
         minEle = -1;
     }
-    
-    // Add an element to the top of stack
     void push(int x) {
         if (st.empty()) {
             minEle = x;
             st.push(x);
         }
-        // If new number is less than minEle
         else if (x < minEle) {
             st.push(2 * x - minEle);
             minEle = x;
@@ -27,21 +24,17 @@ public:
             st.push(x);
         }
     }
-    
-    // Remove the top element from the stack
     void pop() {
         if (st.empty()) return;
         
         int top = st.top();
         st.pop();
         
-        // Minimum will change if min element is removed
         if (top < minEle) {
             minEle = 2 * minEle - top;
         }
     }
     
-    // Return top element of the stack
     int peek() {
         if (st.empty()) return -1;
 
@@ -49,7 +42,6 @@ public:
         return (minEle > top) ? minEle : top;
     }
     
-    // Return minimum element of the stack
     int getMin() {
         if (st.empty()) return -1;
         return minEle;

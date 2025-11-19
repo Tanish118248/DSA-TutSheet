@@ -13,7 +13,7 @@ void displayCircular(Node* head) {
         cout << temp->data << " ";
         temp = temp->next;
     } while (temp != head);
-    cout << head->data; // repeat head
+    cout << head->data; 
     cout << endl;
 }
 

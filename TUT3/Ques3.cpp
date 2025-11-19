@@ -7,7 +7,7 @@ public:
     bool isValid(string expr) {
         stack<char> s;
         for (int i = 0; i < expr.size(); i++) {
-            if (expr[i] == '(' || expr[i] == '[' || expr[i] == '{') {  // opening
+            if (expr[i] == '(' || expr[i] == '[' || expr[i] == '{') { 
                 s.push(expr[i]);
             } else {  // closing
                 if (s.size() == 0) return false;
@@ -15,7 +15,7 @@ public:
                     (s.top() == '[' && expr[i] == ']') ||
                     (s.top() == '{' && expr[i] == '}')) {
                     s.pop();
-                } else {  // no match
+                } else {  
                     return false;
                 }
             }

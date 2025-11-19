@@ -11,7 +11,7 @@ void bubble_sort(int arr[], int n){
                 isSwap = true;
             }
         }
-        if(!isSwap) return;  // array is already sorted
+        if(!isSwap) return; 
     }
 }
 int main(){

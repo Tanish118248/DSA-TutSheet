@@ -8,7 +8,6 @@ struct Node {
 
 Node* head = NULL;
 
-// Insertion anywhere (beginning, end, or after a node)
 void insert(int val, int after = -1) {
     Node* newNode = new Node{val, NULL};
     if (!head) {
@@ -17,12 +16,12 @@ void insert(int val, int after = -1) {
         return;
     }
 
-    if (after == -1) { // insert at end
+    if (after == -1) { 
         Node* temp = head;
         while (temp->next != head) temp = temp->next;
         temp->next = newNode;
         newNode->next = head;
-    } else { // insert after specific node
+    } else { 
         Node* temp = head;
         do {
             if (temp->data == after) {
@@ -36,7 +35,6 @@ void insert(int val, int after = -1) {
     }
 }
 
-// Delete a specific node
 void deleteNode(int key) {
     if (!head) return;
 
@@ -62,7 +60,6 @@ void deleteNode(int key) {
     cout << "Node not found.\n";
 }
 
-// Search for a node
 void search(int key) {
     if (!head) {
         cout << "Empty list.\n";

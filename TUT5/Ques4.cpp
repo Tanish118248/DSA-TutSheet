@@ -14,7 +14,7 @@ Node* reverseList(Node *head) {
         prev = curr;
         curr = next;
     }
-    return prev; // new head
+    return prev;
 }
 
 void display(Node *head) {

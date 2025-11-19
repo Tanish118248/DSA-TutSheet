@@ -65,8 +65,6 @@ public:
         cout << endl;
     }
 };
-
-// Function to interleave queue
 void interleaveQueue(Queue &q) {
     int n = q.getSize();
     if (n % 2 != 0) {
@@ -76,23 +74,19 @@ void interleaveQueue(Queue &q) {
 
     int half = n / 2;
     Queue firstHalf;
-
-    // Step 1: Store first half into firstHalf queue
     for (int i = 0; i < half; i++) {
         firstHalf.enqueue(q.dequeue());
     }
 
-    // Step 2: Interleave
     while (!firstHalf.isEmpty()) {
-        q.enqueue(firstHalf.dequeue()); // element from first half
-        q.enqueue(q.dequeue());         // element from second half
+        q.enqueue(firstHalf.dequeue()); 
+        q.enqueue(q.dequeue());       
     }
 }
 
 int main() {
     Queue q;
 
-    // Input: 4 7 11 20 5 9
     q.enqueue(4);
     q.enqueue(7);
     q.enqueue(11);
@@ -110,5 +104,6 @@ int main() {
 
     return 0;
 }
+
 
 

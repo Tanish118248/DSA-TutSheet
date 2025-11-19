@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Function to display array
 void display(int arr[], int n) {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
@@ -29,7 +28,6 @@ void insertionSort(int arr[], int n) {
     for (int i = 1; i < n; i++) {
         int key = arr[i];
         int j = i - 1;
-        // Move elements greater than key one position ahead
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
             j--;
@@ -55,7 +53,6 @@ void bubbleSort(int arr[], int n) {
     display(arr, n);
 }
 
-// MAIN PROGRAM
 int main() {
     int n, choice;
     cout << "Enter number of elements: ";
@@ -76,7 +73,7 @@ int main() {
         cin >> choice;
 
         int tempArr[100];
-        for (int i = 0; i < n; i++) tempArr[i] = arr[i]; // Copy original array
+        for (int i = 0; i < n; i++) tempArr[i] = arr[i]; 
 
         switch (choice) {
             case 1: selectionSort(tempArr, n); break;
@@ -89,6 +86,4 @@ int main() {
 
     return 0;
 }
-
-
 

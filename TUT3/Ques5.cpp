@@ -1,23 +1,19 @@
 // Write a program for the evaluation of a Postfix expression
 #include <iostream>
 #include <stack>
-#include <cctype>  // for isdigit()
-#include <cmath>   // for pow()
+#include <cctype>  
+#include <cmath>   
 using namespace std;
-// Function to evaluate postfix expression
 int evaluatePostfix(string expr) {
     stack<int> st;
     for (char c : expr) {
-        // If character is whitespace, skip it
         if (c == ' ') continue;
-        // If operand (single digit for simplicity)
         if (isdigit(c)) {
-            st.push(c - '0');  // convert char to int
+            st.push(c - '0');  
         }
         else {
-            // Operator: pop two operands
-            int op2 = st.top(); st.pop(); // second operand
-            int op1 = st.top(); st.pop(); // first operand
+            int op2 = st.top(); st.pop(); 
+            int op1 = st.top(); st.pop();
             int result;
             switch (c) {
                 case '+': result = op1 + op2; break;
@@ -29,15 +25,13 @@ int evaluatePostfix(string expr) {
                     cout << "Invalid operator: " << c << endl;
                     return -1;
             }
-            // Push result back
             st.push(result);
         }
     }
-    // Final result
     return st.top();
 }
 int main() {
-    string postfix;  // Example: (2+3)*5
+    string postfix;  
     cout<<"Enter Postfix Expression: ";
     getline(cin, postfix);
     cout << "Postfix Expression: " << postfix << endl;

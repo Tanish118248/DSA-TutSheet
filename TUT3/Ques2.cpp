@@ -16,9 +16,9 @@ class Stack{
         char pop(){
             if(top == -1){
                 cout<<"Stack Underflow ! "<<endl;
-                return '\0';   // return null character if empty
+                return '\0';  
             }
-            return arr[top--];   // return and then decrease top
+            return arr[top--];   
         }
         bool isEmpty(){
             return top == -1;
@@ -28,12 +28,12 @@ class Stack{
 int main(){
     Stack s;
     string str = "DataStructure"; 
-    for(char ch : str){  //Push all characters
+    for(char ch : str){  
         s.push(ch);
     }
     cout << "Reversed string = ";
-    while(!s.isEmpty()){  //Pop all characters (reverse order)
-        cout << s.pop();   // The topmost character before removal, The element is then removed from stack
+    while(!s.isEmpty()){  
+        cout << s.pop();   
     }
     cout << endl;
 

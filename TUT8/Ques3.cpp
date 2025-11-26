@@ -1,8 +1,8 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
-struct Node {
+class Node {
+    public:
     int data;
     Node* left;
     Node* right;

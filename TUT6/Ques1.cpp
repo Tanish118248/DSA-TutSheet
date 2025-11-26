@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+class Node {
+    public:
     int data;
     Node* next;
 };
-
 Node* head = NULL;
 
 void insert(int val, int after = -1) {

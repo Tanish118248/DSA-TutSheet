@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+class Node {
+    public:
     int data;
     Node *next;
 };
-
 Node* reverseList(Node *head) {
     Node *prev = NULL, *curr = head, *next = NULL;
     while (curr) {
@@ -16,7 +16,6 @@ Node* reverseList(Node *head) {
     }
     return prev;
 }
-
 void display(Node *head) {
     while (head) {
         cout << head->data << "->";
@@ -24,7 +23,6 @@ void display(Node *head) {
     }
     cout << "NULL\n";
 }
-
 int main() {
     Node *head = new Node{1, new Node{2, new Node{3, new Node{4, new Node{5, NULL}}}}};
     cout << "Original: ";

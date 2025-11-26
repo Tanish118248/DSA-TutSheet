@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-
-struct DNode {
+class DNode {
+    public:
     int data;
     DNode *prev, *next;
 };

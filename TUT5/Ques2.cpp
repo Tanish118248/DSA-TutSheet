@@ -1,15 +1,14 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+class Node {
+    public:
     int data;
     Node *next;
 };
-
 void countAndDelete(Node* &head, int key) {
     int count = 0;
     Node *temp = head, *prev = NULL;
-
     while (temp) {
         if (temp->data == key) {
             count++;
